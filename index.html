@@ -10,10 +10,9 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon%20and%20logo/vichi%20resource%20consultation%20logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -32,16 +31,18 @@
           </div>
         </div>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#mission">Mission</a>
-          <a href="#programmes">Programmes</a>
-          <a href="#services">Services</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
+        <nav class="main-nav" id="site-navigation" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="programmes.html">Programmes</a>
+          <a href="services.html">Services</a>
+          <a href="our-work.html">Our Work</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html">Contact</a>
         </nav>
 
-        <button class="button button-primary open-contact-modal" type="button">Book a Consultation</button>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false"><span></span><span></span></button>
+        <a class="button button-primary header-cta" href="contact.html#contact">Talk with us</a>
       </div>
     </header>
 
@@ -49,45 +50,21 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Empowering education professionals</p>
-            <h1>Building brighter learning environments for the next generation.</h1>
+            <p class="eyebrow">Welcome to</p>
+            <h1>Vichi Resources Consults</h1>
+            <p class="hero-tagline">Building brighter learning environments for the next generation.</p>
             <p class="lead">
-              We exist to help education personnel develop the required skills,
-              expertise, and practical strategies needed to deliver quality
-              service and lasting impact in schools, communities, and learning
-              institutions.
+              Practical support for educators, schools, children and communities.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#programmes">Explore Programmes</a>
-              <a class="button button-secondary" href="#about">Learn More</a>
+              <a class="button button-primary" href="programmes.html">Explore programmes</a>
             </div>
 
             <ul class="hero-points" aria-label="Key strengths">
-              <li>Modern teaching methods</li>
               <li>Professional development</li>
-              <li>Inclusive, learner-focused support</li>
+              <li>School support</li>
+              <li>Child-centred learning</li>
             </ul>
-          </div>
-
-          <div class="hero-card" aria-label="Consultancy overview card">
-            <div class="card-panel">
-              <span class="panel-label">Our Aim</span>
-              <h2>Our aim is to become the market leader in the education services sector through offering bespoke educational solutions always delivered to the highest standards of service</h2>
-              <div class="mini-stats">
-                <div>
-                  <strong>Teachers</strong>
-                  <span>Capacity building</span>
-                </div>
-                <div>
-                  <strong>Schools</strong>
-                  <span>Quality improvement</span>
-                </div>
-                <div>
-                  <strong>Communities</strong>
-                  <span>Child-centered development</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -170,166 +147,37 @@
         </div>
       </section>
 
-      <section class="section" id="programmes">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Customized training programmes</p>
-            <h2>Professional development tailored to your needs</h2>
-          </div>
-
-          <div class="programme-grid">
-            <article class="programme-card">
-              <span class="tag">For Teachers</span>
-              <ul>
-                <li>Team building</li>
-                <li>Health and safety management</li>
-                <li>Professional work ethics</li>
-                <li>Behaviour and classroom management</li>
-                <li>Learning through play</li>
-                <li>Jolly Phonics</li>
-                <li>Reading and writing in Key Stage 1 &amp; 2</li>
-                <li>Inclusive teaching</li>
-                <li>Modern approaches to teaching literacy and numeracy</li>
-              </ul>
-            </article>
-
-            <article class="programme-card">
-              <span class="tag">For Administration</span>
-              <ul>
-                <li>Creative thinking</li>
-                <li>Coaching and leadership skills</li>
-                <li>Delegation and effective communication</li>
-                <li>Modern administrative strategies</li>
-                <li>Record keeping</li>
-                <li>Handling difficult customers</li>
-                <li>Professional work ethics</li>
-                <li>Health and safety management</li>
-              </ul>
-            </article>
-
-            <article class="programme-card">
-              <span class="tag">For Pupils &amp; Students</span>
-              <ul>
-                <li>Mentoring seminars</li>
-                <li>Career guidance</li>
-                <li>Organising events</li>
-                <li>Skill development</li>
-                <li>Confidence building</li>
-                <li>Communication and self-expression</li>
-                <li>Leadership development</li>
-              </ul>
-            </article>
+      <section class="founder-section section">
+        <div class="container founder-grid">
+          <img src="Team photos/Vivienne Kachollom Rwang.png" alt="Vivienne Kachollom Rwang, founder of Vichi Resources Consults" />
+          <div class="founder-copy">
+            <p class="eyebrow">A message from our founder</p>
+            <h2>Education grows when people grow.</h2>
+            <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivienne Kachollom Rwang</blockquote>
+            <a class="text-link" href="about.html#founder">Read the founder's message <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
 
-      <section class="section services-section" id="services">
+      
+
+      <section class="section early-years-section" id="early-years">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">What we offer</p>
-            <h2>OUR SERVICES</h2>
+            <p class="eyebrow">Nursery &amp; preschool</p>
+            <h2>Little learners. Big beginnings.</h2>
+            <p>We help schools and families create early-years experiences where children can explore, play and build the foundations for lifelong learning.</p>
           </div>
-
-          <p class="services-intro">
-            Vichi Resources Consult uses its extensive knowledge of the education sector
-            to provide flexible educational services designed to support institutions and
-            individuals in reaching their maximum potential. Our wide range of services
-            include:
-          </p>
-
-          <div class="services-grid">
-            <article class="service-card">
-              <h3>Continuing Professional Development (CPD)</h3>
-              <p>
-                Our “Hands Up for Excellence” courses provide teachers with access to
-                the best training opportunities locally and abroad, helping them share
-                practice and stay current with global trends in teaching and management.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>School Resourcing</h3>
-              <p>
-                We offer professional guidance on the most suitable resources for schools,
-                including curriculum development, planning, books, classroom requirements,
-                and essential equipment needed for quality teaching and learning.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Setting Up New Schools</h3>
-              <p>
-                We provide consultancy for establishing reputable schools with strong
-                planning and a full understanding of global best practices, quality
-                standards, and effective budget management.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Family-Centred Learning Projects</h3>
-              <p>
-                We explore practical ways to empower families as centres of learning,
-                especially in communities with limited access to conventional schools,
-                helping reduce costs while supporting early-years education.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Staff Recruitment</h3>
-              <p>
-                We recruit highly qualified academic and administrative staff, set up
-                staffing structures, allocate roles, advise on welfare packages, and help
-                develop job descriptions, handbooks, policy documents, and appraisal systems.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Applications for Digital Technology in Education and Welfare</h3>
-              <p>
-                We help communities benefit from digital innovations in education and
-                welfare, bringing web-based solutions to both the young and older members
-                of society in ways that improve access and participation.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Community Educational Projects</h3>
-              <p>
-                We promote knowledge-sharing and educational development in communities,
-                supporting displaced settlements and rural areas through practical,
-                culturally relevant learning initiatives.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Mentoring Programmes</h3>
-              <p>
-                We offer career guidance and mentoring support in primary and secondary
-                schools, helping children build self-management, leadership, patriotism,
-                good character, and responsible citizenship.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Educational Research Facilitation and Support</h3>
-              <p>
-                We connect schools and institutions with research opportunities, funding,
-                and expert partnerships that support innovation, academic growth, and
-                the development of national educational programmes.
-              </p>
-            </article>
-
-            <article class="service-card">
-              <h3>Funtertainment</h3>
-              <p>
-                Funtertainment is an annual youth and children’s event designed to create
-                memorable celebrations while helping children develop skills, confidence,
-                and productive thinking through fun, educational, and entertaining experiences.
-              </p>
-            </article>
+          <div class="early-years-grid">
+            <article class="early-years-card"><span>01</span><h3>Learning through play</h3><p>Practical ideas for purposeful play, child-centred activities and joyful discovery.</p></article>
+            <article class="early-years-card"><span>02</span><h3>Language &amp; early literacy</h3><p>Jolly Phonics, reading and writing approaches that make early learning engaging.</p></article>
+            <article class="early-years-card"><span>03</span><h3>Every child included</h3><p>Inclusive teaching strategies that recognise different strengths, needs and ways of learning.</p></article>
           </div>
+          <a class="text-link" href="programmes.html#nursery-preschool">Explore early-years programmes <span aria-hidden="true">↗</span></a>
         </div>
       </section>
+
+      
 
       <section class="section team-section" id="team">
         <div class="container">
@@ -341,83 +189,43 @@
           <div class="team-grid">
             <article class="team-card">
               <img class="team-photo" src="team photos/Vivienne Kachollom Rwang.png" alt="Vivienne Kachollom Rwang" />
-              <h3>Vivienne Kachollom Rwang</h3>
-              <p class="role">Education Management &amp; Leadership</p>
-              <div class="team-bio">
-                <p>
-                  Vivienne Kachollom Rwang took up teaching over twenty-five years ago. She obtained a Masters Degree in Education Management and Leadership from University of Southampton, United Kingdom in 2016, a postgraduate diploma in education (PGDE) at the University of Abuja in 2006.
-                </p>
-                <p>
-                  Married and with young children of her own, she specialises not only in early years teaching but also in the professional development of teachers, setting up reputable, excellent standard schools and in the planning, delivery and assessment of courses of study.
-                </p>
-                <p>
-                  She is British trained and has travelled and studied extensively throughout her career, including taking part in summer courses on teaching and learning in the foundation stage, “Every Child Matters” and Modern Strategies for Administration. She is a certified member of the Nigerian Institute of Training and Development (NITAD). She is presently working on a Doctoral Degree at the University of Southampton, United Kingdom.
-                </p>
-              </div>
-            </article>
-
-            <article class="team-card">
-              <img class="team-photo" src="team photos/Adam Meyersieck.png" alt="Adam Meyersieck" />
-              <h3>Adam Meyersieck</h3>
-              <p class="role">Special Educational Needs Specialist</p>
-              <div class="team-bio">
-                <p>
-                  Adam Meyerisiek has been a ‘career’ educator, from his first degree in social and elementary education at Central Michigan University, USA. After a year’s experience in the United States teaching pupils with emotional and behavioural difficulties (EBD), he moved to the United Kingdom, first as a primary school teacher and since 2008 as a specialist working with Special Educational Needs (SEN) pupils.
-                </p>
-                <p>
-                  He completed studies and submissions for MA (London) at the Institute of Education in 2014. He has combined teaching at the Samuel Rhodes SEN School with lectures at London Metropolitan University, tutoring with student teachers at the Institute of Education and contributing to professional development programmes and special education services in communities across the United Kingdom and around the world.
-                </p>
+              <div class="team-content">
+                <h3>Vivienne Kachollom Rwang</h3>
+                <p class="role">Education Management &amp; Leadership</p>
+                <div class="team-bio">
+                  <p>
+                    Vivienne has worked in education for more than twenty-five years, supporting children, teachers and school leaders with practical, people-centered learning strategies.
+                  </p>
+                </div>
+                <a class="text-link" href="team.html">Read more <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
             <article class="team-card">
               <img class="team-photo" src="team photos/Katherine (Kate) Pam.png" alt="Katherine (Kate) Pam" />
-              <h3>Katherine (Kate) Pam</h3>
-              <p class="role">Management Consultant</p>
-              <div class="team-bio">
-                <p>
-                  Katherine (Kate) Pam has her first degree in agricultural economics. Working in financial services, she went on to become a Certified Management Consultant and a member of the Nigerian Management Institute.
-                </p>
-                <p>
-                  She now has over seven years of experience in wealth and project management. In the United Kingdom she has added MBAs in marketing, global management and leadership, and has also engaged in a variety of community-serving activities including work as a teaching assistant in a special educational needs school.
-                </p>
-                <p>
-                  Her current interests lie in mobilising the strengths of families and local communities for peaceful, sustainable development, and in securing the substantial advances in education on which Nigeria’s future depends.
-                </p>
-              </div>
-            </article>
-
-            <article class="team-card">
-              <img class="team-photo" src="team photos/John Baker.png" alt="John Baker" />
-              <h3>John Baker</h3>
-              <p class="role">Community &amp; Communication Specialist</p>
-              <div class="team-bio">
-                <p>
-                  John Baker studied life sciences at Cambridge University, England, and health care in London. His career took him in many directions – his major activities always primarily concerned with effective communication.
-                </p>
-                <p>
-                  He moved to east London in 1999, became a housing association director in 2001, and thereafter has been continuously involved in community and public affairs. His proposal for a partnership between family-focused social work and housing (2008) was the first of its kind in the United Kingdom.
-                </p>
-                <p>
-                  He is a member of the board of his local health network, with a special interest in community psychological health matters. John strongly encourages empowerment and practical creativity, both traditional and technological, within communities in London where he has his own workshop.
-                </p>
+              <div class="team-content">
+                <h3>Katherine (Kate) Pam</h3>
+                <p class="role">Management Consultant</p>
+                <div class="team-bio">
+                  <p>
+                    Kate brings experience in management, community development and education support, helping families and organisations build sustainable progress.
+                  </p>
+                </div>
+                <a class="text-link" href="team.html">Read more <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
             <article class="team-card">
               <img class="team-photo" src="team photos/Simi Valerie Rwang.png" alt="Simi Valerie Rwang" />
-              <h3>Simi Valerie Rwang</h3>
-              <p class="role">Early Years Teacher</p>
-              <div class="team-bio">
-                <p>
-                  Simi Valerie Rwang is a young member of the team who is very passionate about working with children. Having attended a British school herself, she puts that experience to use in her work as a teacher.
-                </p>
-                <p>
-                  She has gained more experience working with children in a classroom environment under the British curriculum. Her experience is also derived from a number of training courses she has attended such as Classroom Management, Early Years Foundation Stage, Jolly Phonics, Practical Modern Methods for Teaching, Classroom Displays and many more.
-                </p>
-                <p>
-                  She realizes that children are different no matter how similar they may seem. This she believes is important in understanding each child and their learning style in order to make sure that learning takes place for each child.
-                </p>
+              <div class="team-content">
+                <h3>Simi Valerie Rwang</h3>
+                <p class="role">Early Years Teacher</p>
+                <div class="team-bio">
+                  <p>
+                    Simi is passionate about early learning, child development and creating classroom experiences that help each child thrive in their own way.
+                  </p>
+                </div>
+                <a class="text-link" href="team.html">Read more <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           </div>
@@ -428,10 +236,10 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Our work</p>
-            <h2>Company Profile</h2>
+            <h2>Project showcase</h2>
           </div>
 
-          <div id="companyProfileGrid" class="company-profile-grid"></div>
+          <div id="homeShowcaseCarousel" class="home-showcase-carousel" aria-live="polite"></div>
         </div>
       </section>
 
@@ -441,7 +249,7 @@
             <p class="eyebrow">Let’s work together</p>
             <h2>Partner with Vichi Resources Consults for sustainable educational growth.</h2>
           </div>
-          <button class="button button-primary open-contact-modal" type="button">Contact Us</button>
+          <a class="button button-primary" href="contact.html#contact">Contact us</a>
         </div>
 
         <div class="container contact-details">
@@ -477,36 +285,6 @@
         </div>
       </section>
     </main>
-
-    <div class="modal-overlay hidden" id="contactModal" aria-hidden="true">
-      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-        <button class="modal-close" type="button" aria-label="Close contact form">×</button>
-        <h3 id="contactModalTitle">Send us a message</h3>
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Nature of Consultation / Inquiry</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-
-          <button class="button button-primary form-submit" type="submit">Send Enquiry</button>
-        </form>
-      </div>
-    </div>
 
     <footer class="site-footer">
       <div class="container footer-inner">

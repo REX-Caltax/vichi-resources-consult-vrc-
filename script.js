@@ -5,6 +5,132 @@ document.addEventListener('DOMContentLoaded', () => {
     footer.textContent = `© ${year} Vichi Resources Consults (VRC)`;
   }
 
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+    mainNav?.classList.toggle('is-open', !isOpen);
+  });
+
+  mainNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      menuToggle?.setAttribute('aria-label', 'Open navigation');
+      mainNav.classList.remove('is-open');
+    });
+  });
+
+  const homeShowcaseImages = [
+    { title: 'Abuja School', src: 'Carousels/Abuja School/20190729_105231.jpg' },
+    { title: "Children's Church - Global Fame Ministry Abuja-May 2019", src: 'Carousels/Children\'s Church - Global Fame Ministry Abuja-May 2019/20190518_155337.jpg' },
+    { title: "Children's church Hangout Global Flame-April 2019", src: 'Carousels/Children\'s church Hangout Global Flame-April 2019/20190427_100527.jpg' },
+    { title: 'Children\'s Church Teachers Training - Global Flame Abuja-January 2019', src: 'Carousels/Children\'s Church Teachers Training - Global Flame Abuja-January 2019/20190126_094717.jpg' },
+    { title: 'Fatima School - Teacher Training- May 2019', src: 'Carousels/Fatima School - Teacher Training- May 2019/20190502_095308.jpg' },
+    { title: 'IMGS funtertainment 2013', src: 'Carousels/IMGS funtertainment 2013/DSC_0021 - Copy - Copy.JPG' },
+    { title: 'Funtertainment 2013', src: 'Carousels/Funtertainment 2013/DSC_0068.JPG' },
+    { title: 'Funtertainment 2014', src: 'Carousels/Funtertainment 2014/DSC_0001 - Crop.jpg' },
+    { title: 'Funtertainment- House of Recab', src: 'Carousels/Funtertainment- House of Recab/DSC03792.jpg' },
+    { title: 'Matrix International Academy, Gombe', src: 'Carousels/Matrix International Academy/20190925_151236.jpg' },
+    { title: 'NITAD-June 2019', src: 'Carousels/NITAD-June 2019/20190611_130848.jpg' },
+    { title: 'Our Lady Queen of Peace School Jos', src: 'Carousels/Our Lady Queen of Peace School Jos/FB_IMG_1563465455093.jpg' },
+    { title: 'Session with PTA Fatima School Utako Abuja', src: 'Carousels/Session with PTA Fatima School Utako Abuja/20190622_105309.jpg' },
+    { title: 'Story Time Session with displaced children- May 2016', src: 'Carousels/Story Time Session with displaced children- May 2016/20161103_103356.jpg' },
+    { title: 'Teacher Training - Buken School Jos- January 2017', src: 'Carousels/Teacher Training - Buken School Jos- January 2017/20170125_134044.jpg' },
+    { title: 'Teacher Training - Kindle School Kaduna September 2016', src: 'Carousels/Teacher Training - Kindle School Kaduna September 2016/20160902_121415.jpg' },
+    { title: 'Teacher Training - Kindle School Kaduna-May 2016', src: 'Carousels/Teacher Training - Kindle School Kaduna-May 2016/DSC04282.JPG' },
+    { title: 'Teacher Training Fatima School Utako Abuja-October 2019', src: 'Carousels/Teacher Training Fatima School Utako Abuja-October 2019/20191026_102055.jpg' },
+    { title: 'Widows Mentoring and Empowerment Programme- September 2018', src: 'Carousels/Widows Mentoring and Empowerment Programme- September 2018/20180908_105152.jpg' },
+  ];
+
+  const homeShowcase = document.getElementById('homeShowcaseCarousel');
+  if (homeShowcase) {
+    const viewport = document.createElement('div');
+    viewport.className = 'home-showcase-viewport';
+
+    const track = document.createElement('div');
+    track.className = 'home-showcase-track';
+
+    const slides = homeShowcaseImages.map((item, index) => {
+      const slide = document.createElement('div');
+      slide.className = `home-showcase-slide${index === 0 ? ' active' : ''}`;
+
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.title;
+      slide.appendChild(img);
+
+      const caption = document.createElement('div');
+      caption.className = 'home-showcase-caption';
+      caption.textContent = item.title;
+      slide.appendChild(caption);
+
+      return slide;
+    });
+
+    slides.forEach((slide) => track.appendChild(slide));
+
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'home-showcase-btn prev';
+    prevBtn.setAttribute('aria-label', 'Previous project slide');
+    prevBtn.textContent = '‹';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'home-showcase-btn next';
+    nextBtn.setAttribute('aria-label', 'Next project slide');
+    nextBtn.textContent = '›';
+
+    const dots = document.createElement('div');
+    dots.className = 'home-showcase-dots';
+
+    homeShowcaseImages.forEach((item, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `home-showcase-dot${index === 0 ? ' active' : ''}`;
+      dot.setAttribute('aria-label', `Show slide ${index + 1} for ${item.title}`);
+      dot.addEventListener('click', () => updateHomeShowcase(index));
+      dots.appendChild(dot);
+    });
+
+    viewport.appendChild(track);
+    viewport.appendChild(prevBtn);
+    viewport.appendChild(nextBtn);
+    homeShowcase.appendChild(viewport);
+    homeShowcase.appendChild(dots);
+
+    const updateHomeShowcase = (activeIndex) => {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === activeIndex);
+      });
+
+      [...dots.children].forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    };
+
+    prevBtn.addEventListener('click', () => {
+      const currentIndex = slides.findIndex((slide) => slide.classList.contains('active'));
+      const prevIndex = currentIndex <= 0 ? slides.length - 1 : currentIndex - 1;
+      updateHomeShowcase(prevIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const currentIndex = slides.findIndex((slide) => slide.classList.contains('active'));
+      const nextIndex = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
+      updateHomeShowcase(nextIndex);
+    });
+
+    setInterval(() => {
+      if (document.hidden) return;
+      const currentIndex = slides.findIndex((slide) => slide.classList.contains('active'));
+      const nextIndex = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
+      updateHomeShowcase(nextIndex);
+    }, 5000);
+  }
+
   const companyProfileData = [
     {
       title: 'Abuja School',
@@ -51,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
     },
     {
-      title: 'Matrix International Academy',
+      title: 'Matrix International Academy, Gombe',
       images: [
         'Carousels/Matrix International Academy/20190925_151236.jpg',
         'Carousels/Matrix International Academy/20190925_151247.jpg',
@@ -137,6 +263,63 @@ document.addEventListener('DOMContentLoaded', () => {
         'Carousels/Widows Mentoring and Empowerment Programme- September 2018/20180908_105937.jpg',
         'Carousels/Widows Mentoring and Empowerment Programme- September 2018/20180908_110210.jpg',
         'Carousels/Widows Mentoring and Empowerment Programme- September 2018/20180908_125953.jpg',
+      ],
+    },
+    {
+      title: 'IMGS funtertainment 2013',
+      images: [
+        'Carousels/IMGS funtertainment 2013/DSC_0021 - Copy - Copy.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0028.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0141.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0228.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0229.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0235.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0264.JPG',
+        'Carousels/IMGS funtertainment 2013/DSC_0328.JPG',
+      ],
+    },
+    {
+      title: 'Funtertainment 2013',
+      images: [
+        'Carousels/Funtertainment 2013/DSC_0068.JPG',
+        'Carousels/Funtertainment 2013/DSC_0072.JPG',
+        'Carousels/Funtertainment 2013/DSC_0073 - Copy.JPG',
+        'Carousels/Funtertainment 2013/DSC_0073 - crop.jpg',
+        'Carousels/Funtertainment 2013/DSC_0103 - Copy.JPG',
+        'Carousels/Funtertainment 2013/DSC_0140.JPG',
+        'Carousels/Funtertainment 2013/DSC_0196.JPG',
+        'Carousels/Funtertainment 2013/DSC_0235.jpg',
+        'Carousels/Funtertainment 2013/DSC_0250.JPG',
+      ],
+    },
+    {
+      title: 'Funtertainment 2014',
+      images: [
+        'Carousels/Funtertainment 2014/DSC_0001 - Crop.jpg',
+        'Carousels/Funtertainment 2014/DSC_0006.JPG',
+        'Carousels/Funtertainment 2014/DSC_0043.JPG',
+        'Carousels/Funtertainment 2014/DSC_0056.JPG',
+        'Carousels/Funtertainment 2014/DSC_0064.JPG',
+        'Carousels/Funtertainment 2014/DSC_0070.JPG',
+        'Carousels/Funtertainment 2014/DSC_0071.JPG',
+        'Carousels/Funtertainment 2014/DSC_0072.JPG',
+      ],
+    },
+    {
+      title: 'Funtertainment- House of Recab',
+      images: [
+        'Carousels/Funtertainment- House of Recab/DSC03792.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC03943.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC03945.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC03948.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC03957.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC03984.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04028.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04030.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04200.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04239.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04282.jpg',
+        'Carousels/Funtertainment- House of Recab/DSC04303.jpg',
       ],
     },
   ];
@@ -240,41 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.dataset.index = String(activeIndex);
   }
 
-  const modal = document.getElementById('contactModal');
-  const openButtons = document.querySelectorAll('.open-contact-modal');
-  const closeButton = document.querySelector('.modal-close');
   const form = document.getElementById('contactForm');
-
-  const emailTarget = 'Zaramson@gmail.com';
-
-  const openModal = () => {
-    if (!modal) return;
-    modal.classList.remove('hidden');
-    modal.setAttribute('aria-hidden', 'false');
-  };
-
-  const closeModal = () => {
-    if (!modal) return;
-    modal.classList.add('hidden');
-    modal.setAttribute('aria-hidden', 'true');
-  };
-
-  openButtons.forEach((button) => {
-    button.addEventListener('click', openModal);
-  });
-
-  closeButton?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
 
   form?.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -290,8 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `Name: ${name}\nPhone Number: ${phone}\nEmail: ${email}\n\nNature of Consultation / Inquiry:\n${message}`
     );
 
-    window.location.href = `mailto:${emailTarget}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:vichiconsult@gmail.com?subject=${subject}&body=${body}`;
     form.reset();
-    closeModal();
   });
 });
