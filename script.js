@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.className = `home-showcase-slide${index === 0 ? ' active' : ''}`;
 
       const img = document.createElement('img');
-      img.src = item.src;
+      img.dataset.src = item.src;
       img.alt = item.title;
+      img.loading = 'lazy';
+      img.decoding = 'async';
       slide.appendChild(img);
 
       const caption = document.createElement('div');
@@ -102,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     homeShowcase.appendChild(dots);
 
     const updateHomeShowcase = (activeIndex) => {
+      loadSlideImage(slides[activeIndex]);
       slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === activeIndex);
       });
@@ -110,6 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.classList.toggle('active', index === activeIndex);
       });
     };
+
+    loadSlideImage(slides[0]);
 
     prevBtn.addEventListener('click', () => {
       const currentIndex = slides.findIndex((slide) => slide.classList.contains('active'));
@@ -347,10 +352,13 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = `carousel-slide${idx === 0 ? ' active' : ''}`;
 
         const img = document.createElement('img');
-        img.src = imageSrc;
+        img.dataset.src = imageSrc;
         img.alt = `${group.title} image ${idx + 1}`;
+        img.loading = 'lazy';
+        img.decoding = 'async';
 
         slide.appendChild(img);
+        if (idx === 0) loadSlideImage(slide);
         track.appendChild(slide);
       });
 
@@ -399,12 +407,21 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel(carousel, nextIndex);
       });
 
-      setInterval(() => {
-        if (document.hidden) return;
-        const currentIndex = Number(carousel.dataset.index || 0);
-        const nextIndex = (currentIndex + 1) % group.images.length;
-        updateCarousel(carousel, nextIndex);
-      }, 5000);
+      let autoplayTimer;
+      const carouselObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !autoplayTimer) {
+          autoplayTimer = setInterval(() => {
+            if (document.hidden) return;
+            const currentIndex = Number(carousel.dataset.index || 0);
+            const nextIndex = (currentIndex + 1) % group.images.length;
+            updateCarousel(carousel, nextIndex);
+          }, 5000);
+        } else if (!entry.isIntersecting && autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = undefined;
+        }
+      }, { threshold: 0.25 });
+      carouselObserver.observe(carousel);
     });
   }
 
@@ -412,6 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = carousel.querySelectorAll('.carousel-slide');
     const dots = carousel.querySelectorAll('.carousel-dot');
 
+    loadSlideImage(slides[activeIndex]);
     slides.forEach((slide, index) => {
       slide.classList.toggle('active', index === activeIndex);
     });
@@ -421,6 +439,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     carousel.dataset.index = String(activeIndex);
+  }
+
+  function loadSlideImage(slide) {
+    const img = slide?.querySelector('img');
+    if (img && !img.hasAttribute('src')) {
+      img.src = img.dataset.src;
+    }
   }
 
   const form = document.getElementById('contactForm');
