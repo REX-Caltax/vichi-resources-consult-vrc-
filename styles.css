@@ -51,7 +51,7 @@ a {
 }
 
 .section {
-  padding: 96px 0;
+  padding: 50px 0;
 }
 
 .eyebrow {
@@ -116,13 +116,13 @@ a {
 }
 
 .brand-logo {
-  width: 122px;
-  height: 122px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(23, 43, 77, 0.08);
-  box-shadow: var(--shadow);
+  /* border-radius: 16px; */
+  /* background: rgba(255, 255, 255, 0.8); */
+  /* border: 1px solid rgba(23, 43, 77, 0.08); */
+  /* box-shadow: var(--shadow); */
 }
 
 .brand-name {
@@ -471,6 +471,7 @@ a {
 
 .team-section {
   background: rgba(255,255,255,0.5);
+  padding: initial;
 }
 
 .team-grid {
@@ -504,6 +505,11 @@ a {
   display: block;
   margin-bottom: 14px;
   background: linear-gradient(135deg, rgba(74, 144, 226, 0.08), rgba(251, 192, 45, 0.12));
+}
+
+.team-section .team-photo {
+  height: 280px;
+  object-fit: contain;
 }
 
 .team-card h3 {
@@ -1232,6 +1238,7 @@ h1,
 
 .page-hero-grid {
   display: grid;
+  padding:28px 0px;
   grid-template-columns: 1fr 0.85fr;
   align-items: center;
   gap: 56px;
@@ -1463,8 +1470,30 @@ h1,
   justify-content: center;
 }
 
+@media (max-width: 600px) {
+  .team-page-grid {
+    gap: 18px;
+  }
+
+  .team-profile-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 14px;
+  }
+
+  .team-profile-card .team-photo {
+    min-height: 220px;
+  }
+
+  .team-page-grid .team-content h2,
+  .team-page-grid .role {
+    text-align: center;
+  }
+}
+
 .contact-page-section {
   background: #f5f2e7;
+  padding: 12px;
 }
 
 .contact-page-grid {
@@ -1517,7 +1546,7 @@ h1,
   min-height: 300px;
   padding: 52px 0;
   place-items: center;
-  background: linear-gradient(120deg, rgba(19, 119, 109, 0.92), rgba(16, 90, 84, 0.78)), url("Carousels/Teacher Training Fatima School Utako Abuja-October 2019/20191026_102055.jpg") center 45% / cover;
+  background: linear-gradient(120deg, rgba(19, 119, 109, 0.92), rgba(16, 90, 84, 0.78)), url("carousel-optimized/Teacher Training Fatima School Utako Abuja-October 2019/20191026_102055.webp") center 45% / cover;
   color: #fff;
   text-align: center;
 }

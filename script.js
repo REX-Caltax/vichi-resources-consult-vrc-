@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const carouselImagesWithoutOptimizedVersions = new Set([
+    'Carousels/Funtertainment 2014/DSC_0072.JPG',
+    'Carousels/IMGS funtertainment 2013/DSC_0235.JPG',
+    'Carousels/Teacher Training - Kindle School Kaduna-May 2016/DSC04282.JPG',
+  ]);
+
   const year = new Date().getFullYear();
   const footer = document.querySelector('.site-footer p');
   if (footer) {
@@ -57,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.className = `home-showcase-slide${index === 0 ? ' active' : ''}`;
 
       const img = document.createElement('img');
-      img.dataset.src = item.src;
+      img.dataset.src = getOptimizedCarouselPath(item.src);
       img.alt = item.title;
       img.loading = 'lazy';
       img.decoding = 'async';
@@ -352,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.className = `carousel-slide${idx === 0 ? ' active' : ''}`;
 
         const img = document.createElement('img');
-        img.dataset.src = imageSrc;
+        img.dataset.src = getOptimizedCarouselPath(imageSrc);
         img.alt = `${group.title} image ${idx + 1}`;
         img.loading = 'lazy';
         img.decoding = 'async';
@@ -446,6 +452,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (img && !img.hasAttribute('src')) {
       img.src = img.dataset.src;
     }
+  }
+
+  function getOptimizedCarouselPath(src) {
+    if (carouselImagesWithoutOptimizedVersions.has(src)) return src;
+    return src
+      .replace(/^Carousels\//, 'carousel-optimized/')
+      .replace(/\.(?:jpe?g)$/i, '.webp');
   }
 
   const form = document.getElementById('contactForm');
