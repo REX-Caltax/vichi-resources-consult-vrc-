@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const homeShowcaseImages = [
+    { title: "Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015", src: "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01716_result.jpg" },
+    { title: "Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015", src: "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01730_result.jpg" },
+    { title: "Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4", src: "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC00889.jpg" },
+    { title: "Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4", src: "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01003.jpg" },
+    { title: 'Funtertainment UK', src: 'carousel-optimized/Funtertainment UK/02b2e793-d329-476d-8509-0f255e7e8951_result.jpg' },
+    { title: 'Funtertainment UK', src: 'carousel-optimized/Funtertainment UK/02dff3b7-3122-4371-8ac2-699662447ff4_result.jpg' },
     { title: 'Abuja School', src: 'Carousels/Abuja School/20190729_105231.jpg' },
     { title: "Children's Church - Global Fame Ministry Abuja-May 2019", src: 'Carousels/Children\'s Church - Global Fame Ministry Abuja-May 2019/20190518_155337.jpg' },
     { title: "Children's church Hangout Global Flame-April 2019", src: 'Carousels/Children\'s church Hangout Global Flame-April 2019/20190427_100527.jpg' },
@@ -41,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'Matrix International Academy, Gombe', src: 'Carousels/Matrix International Academy/20190925_151236.jpg' },
     { title: 'NITAD-June 2019', src: 'Carousels/NITAD-June 2019/20190611_130848.jpg' },
     { title: 'Our Lady Queen of Peace School Jos', src: 'Carousels/Our Lady Queen of Peace School Jos/FB_IMG_1563465455093.jpg' },
-    { title: 'Session with PTA Fatima School Utako Abuja', src: 'Carousels/Session with PTA Fatima School Utako Abuja/20190622_105309.jpg' },
     { title: 'Story Time Session with displaced children- May 2016', src: 'Carousels/Story Time Session with displaced children- May 2016/20161103_103356.jpg' },
     { title: 'Teacher Training - Buken School Jos- January 2017', src: 'Carousels/Teacher Training - Buken School Jos- January 2017/20170125_134044.jpg' },
     { title: 'Teacher Training - Kindle School Kaduna September 2016', src: 'Carousels/Teacher Training - Kindle School Kaduna September 2016/20160902_121415.jpg' },
@@ -143,6 +148,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const companyProfileData = [
+    {
+      title: "Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015",
+      images: [
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01716_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01730_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01764_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01767_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01802_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01823_result.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' -June 2015/DSC01824_result.jpg",
+      ],
+    },
+    {
+      title: "Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4",
+      images: [
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC00889.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01003.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01004.JPG",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01032.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01040.jpg",
+        "carousel-optimized/Professional Development for Educators tagged, 'Hands Up for Excellence' June 1-4/DSC01074.jpg",
+      ],
+    },
+    {
+      title: 'Funtertainment UK',
+      images: [
+        'carousel-optimized/Funtertainment UK/02b2e793-d329-476d-8509-0f255e7e8951_result.jpg',
+        'carousel-optimized/Funtertainment UK/02dff3b7-3122-4371-8ac2-699662447ff4_result.jpg',
+        'carousel-optimized/Funtertainment UK/21e10e4c-7d80-459e-83ee-48223bb2d6a1_result.jpg',
+        'carousel-optimized/Funtertainment UK/28f4cbad-aed1-443a-bce3-5c0118d293f9_result.jpg',
+        'carousel-optimized/Funtertainment UK/979b929f-b61d-447d-955d-72339b23b8ec_result.jpg',
+        'carousel-optimized/Funtertainment UK/736621cc-0207-4011-a76c-400bbf321519_result.jpg',
+        'carousel-optimized/Funtertainment UK/901202bf-baed-463f-b0c5-aa423a9db578_result.jpg',
+        'carousel-optimized/Funtertainment UK/IMG_5033_result.png',
+        'carousel-optimized/Funtertainment UK/IMG_5034_result.png',
+        'carousel-optimized/Funtertainment UK/e9291866-b80a-4566-8db3-32f7557bf2fe_result.jpg',
+        'carousel-optimized/Funtertainment UK/fb204969-8b5d-44e5-b7b9-cb856bea1f96_result.jpg',
+        'carousel-optimized/Funtertainment UK/fc8014c0-4574-45b7-bce0-e318dc653009_result.jpg',
+      ],
+    },
     {
       title: 'Abuja School',
       images: [
@@ -455,6 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getOptimizedCarouselPath(src) {
+    if (src.startsWith('carousel-optimized/')) return src;
     if (carouselImagesWithoutOptimizedVersions.has(src)) return src;
     return src
       .replace(/^Carousels\//, 'carousel-optimized/')
