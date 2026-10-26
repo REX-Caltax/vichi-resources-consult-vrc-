@@ -444,6 +444,19 @@ document.addEventListener('DOMContentLoaded', () => {
       carousel.appendChild(btnNext);
       carousel.appendChild(dots);
       card.appendChild(carousel);
+
+      const caseStudyPlaceholder = document.createElement('div');
+      caseStudyPlaceholder.className = 'case-study-placeholder';
+
+      const caseStudyHeading = document.createElement('h4');
+      caseStudyHeading.textContent = 'Case study coming soon';
+      caseStudyPlaceholder.appendChild(caseStudyHeading);
+
+      const caseStudyDescription = document.createElement('p');
+      caseStudyDescription.textContent = `A case study for ${group.title} is being prepared. Check back soon for more about the project’s goals, approach and outcomes.`;
+      caseStudyPlaceholder.appendChild(caseStudyDescription);
+      card.appendChild(caseStudyPlaceholder);
+
       profileGrid.appendChild(card);
 
       btnPrev.addEventListener('click', () => {
