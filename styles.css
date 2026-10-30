@@ -663,11 +663,18 @@ a {
 }
 
 .profile-carousel-card {
+  display: flex;
+  flex-direction: column;
+  height: 760px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 18px 16px 16px;
   box-shadow: 0 20px 35px rgba(29, 33, 40, 0.04);
+}
+
+.profile-carousel-card.carousel-only {
+  height: auto;
 }
 
 .profile-carousel-card h3 {
@@ -678,6 +685,9 @@ a {
 }
 
 .case-study-placeholder {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
   margin-top: 18px;
   padding: 14px 16px;
   border-left: 4px solid var(--orange);
@@ -686,16 +696,60 @@ a {
 }
 
 .case-study-placeholder h4 {
-  margin: 0 0 6px;
+  margin: 0 0 12px;
   color: var(--blue);
-  font-size: 0.92rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.case-study-subtitle {
+  margin: -6px 0 12px;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .case-study-placeholder p {
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.6;
+}
+
+.case-study-section h5 {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.case-study-section + .case-study-section {
+  margin-top: 10px;
+}
+
+.case-study-placeholder ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.case-study-placeholder li + li {
+  margin-top: 5px;
+}
+
+.case-study-placeholder strong {
+  color: var(--text);
+}
+
+.case-study-placeholder blockquote {
+  margin: 0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(33, 94, 151, 0.3);
+}
+
+.case-study-placeholder blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 .carousel {
@@ -870,6 +924,54 @@ a {
 
 .home-showcase-dot.active {
   background: var(--primary);
+}
+
+.brochure-section {
+  padding-top: 24px;
+}
+
+.brochure-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: clamp(22px, 4vw, 44px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.brochure-cover-link {
+  display: block;
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(29, 33, 40, 0.2);
+}
+
+.brochure-cover {
+  width: 100%;
+  height: auto;
+}
+
+.brochure-copy h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.brochure-copy > p:not(.eyebrow) {
+  max-width: 560px;
+  color: var(--muted);
+}
+
+.brochure-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
 }
 
 .cta-section {
@@ -2005,6 +2107,10 @@ main > .programme-overview {
   .team-grid,
   .team-page-grid,
   .company-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brochure-card {
     grid-template-columns: 1fr;
   }
 
